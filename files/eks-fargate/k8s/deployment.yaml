@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: petcart-deployment
-  namespace: petcart
+  name: weblancehub-deployment
+  namespace: weblancehub
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: petcart
+      app: weblancehub
   template:
     metadata:
       labels:
-        app: petcart
+        app: weblancehub
     spec:
       containers:
-        - name: petcart
-          image: 867809929056.dkr.ecr.us-east-1.amazonaws.com/petcart:latest
+        - name: weblancehub
+          image: 867809929056.dkr.ecr.us-east-1.amazonaws.com/weblancehub:latest
           ports:
             - containerPort: 80
