@@ -1,0 +1,348 @@
+/* Modal and Form Container Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modal-content {
+  position: relative;
+  /* CRITICAL: Solid White Background to match service cards */
+  background-color: #ffffff; 
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  transform: translateY(-20px);
+  animation: slideIn 0.3s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  /* Dark color for contrast on white background */
+  color: #333; 
+  cursor: pointer;
+  z-index: 1010;
+  transition: color 0.2s ease-in-out;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  color: #ff9900; /* Orange accent color */
+}
+
+/* Form Layout and Styling */
+.quote-form {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 20px 0 0 0;
+}
+
+.form-inner-header {
+  /* Dark Blue-Gray to match the website header */
+  background-color: #2c3e50; 
+  color: white;
+  padding: 25px 30px;
+  margin: -20px -20px 20px -20px;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-logo {
+  max-height: 35px;
+  margin-right: 8px;
+  width: auto;
+}
+
+.form-brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.form-intro {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-intro h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff9900; /* Orange accent color */
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.form-intro p {
+  font-size: 0.95rem;
+  max-width: 80%;
+  margin: 0 auto;
+  /* Dark text color on the white background */
+  color: #666; 
+}
+
+/* Two-column layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.form-field {
+  flex: 1;
+}
+
+/* Full-width rows */
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* All inputs, selects, and textareas styled to be identical */
+.quote-form input[type="text"],
+.quote-form input[type="email"],
+.quote-form input[type="tel"],
+.quote-form select,
+.quote-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  /* CRITICAL: Light input background to match the clean design */
+  background-color: #f7f7f7; 
+  color: #333; /* Dark text color */
+  border: 1px solid #d4d4d4; 
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+/* Setting consistent heights */
+.quote-form input[type="text"],
+.quote-form input[type="email"],
+.quote-form input[type="tel"],
+.quote-form select {
+  height: 47px;
+}
+
+.quote-form textarea {
+  height: 150px;
+}
+
+/* Correcting placeholder color */
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+  color: #999; 
+  opacity: 1;
+}
+
+/* Styling for the select element options */
+.quote-form select option {
+  background-color: white;
+  color: #333;
+}
+
+/* Making the select dropdown look uniform with inputs */
+.quote-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Updated arrow color to dark gray */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* Adding a consistent focus style */
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  /* Blue border on focus, matching the blue accents on your site */
+  border-color: #007bff; 
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  outline: none;
+  background-color: white;
+  color: #333;
+}
+
+/* Fix for Chrome/Safari autofill background color */
+.quote-form input:-webkit-autofill,
+.quote-form input:-webkit-autofill:hover,
+.quote-form input:-webkit-autofill:focus,
+.quote-form input:-webkit-autofill:active {
+  /* CRITICAL: White autofill background */
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; 
+  -webkit-text-fill-color: #333 !important; 
+}
+
+/* File upload styling */
+.file-upload-wrapper {
+  margin-top: 25px;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 15px;
+  /* Blue tint for the file upload area, matching site's blue accents */
+  background-color: rgba(0, 123, 255, 0.07); 
+  border: 1px dashed #007bff; /* Blue dashed border */
+  border-radius: 6px;
+  cursor: pointer;
+  color: #333; /* Dark text on light background */
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.file-upload-label:hover {
+  background-color: rgba(0, 123, 255, 0.15); /* Darker blue hover background */
+  border-color: #0056b3; 
+  color: #333;
+}
+
+.file-input {
+  display: none;
+}
+
+/* File list styling */
+.file-list {
+  margin-top: 15px;
+  color: #666; /* Dark text */
+  font-size: 0.9rem;
+}
+
+.file-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-list-header span {
+  font-weight: 600;
+  color: #333;
+}
+
+.clear-files-button {
+  background: none;
+  border: none;
+  color: #ff9900; /* Kept orange to match CTA */
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.file-list-ul {
+  margin: 5px 0 0 20px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.file-list-ul li {
+  margin-bottom: 5px;
+}
+
+.no-files-text {
+  font-style: italic;
+  color: #999;
+}
+
+/* Submit button styling - Kept the orange gradient */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #ff9900, #ffc04d);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
+  margin-top: 25px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #e68a00, #ffb31a);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(255, 153, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile-specific styles using a media query */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 20px auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #ffffff; 
+  }
+
+  .form-inner-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-brand-name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+
+  .form-intro h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-intro p {
+    font-size: 0.9rem;
+  }
+
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}

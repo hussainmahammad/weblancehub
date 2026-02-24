@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background-color: white;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* The new CSS for the "Orbiting Glow" effect */
+.group {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.group:hover {
+  transform: translateY(-0.5rem);
+}
+
+.group::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  
+  background: conic-gradient(
+    transparent 0%,
+    transparent 20%,
+    #3B82F6 40%,
+    transparent 60%,
+    transparent 100%
+  );
+  
+  animation: spin-glow 3s infinite linear;
+}
+
+/* The inner card to hide the overflowing gradient */
+.group::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 1.5rem;
+  background-color: #f9fafb;
+  z-index: 1;
+}
+
+/* Hover effects */
+.group:hover::before {
+  opacity: 1;
+}
+
+.group > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* New keyframe for the spinning glow animation */
+@keyframes spin-glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Simple fade-in for instant readability */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
