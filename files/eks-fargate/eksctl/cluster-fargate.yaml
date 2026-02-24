@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: petcart-eks
+  name: weblancehub-eks
   region: us-east-1
 
 iam:
@@ -26,6 +26,6 @@ fargateProfiles:
     selectors:
       - namespace: kube-system
 
-  - name: petcart
+  - name: weblancehub
     selectors:
-      - namespace: petcart
+      - namespace: weblancehub
