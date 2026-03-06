@@ -1,5 +1,3 @@
-<img width="1228" height="737" alt="image" src="https://github.com/user-attachments/assets/04ed00c6-3b74-4c82-a342-32b3556a9fb6" /># WebLanceHub
-
 ## Project Overview
 
 WebLanceHub is a web platform designed to provide affordable web solutions for freelancers and small businesses.  
@@ -66,3 +64,4 @@ A serverless Kubernetes deployment where:
 The deployment architecture, CI/CD pipeline, Terraform infrastructure setup, Kubernetes manifests, and automation workflows used in **WebLanceHub** are the same as those implemented in the **PetCart Store project**.
 
 For a complete and detailed understanding of the deployment architecture and implementation, please refer to the **PetCart Store project documentation**.
+
