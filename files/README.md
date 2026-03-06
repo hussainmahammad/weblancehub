@@ -1,11 +1,11 @@
 ## Project Overview
 
-WebLanceHub is a web platform designed to provide affordable web solutions for freelancers and small businesses.  
+WebLanceHub is a web platform designed to provide affordable web solutions for small businesses.  
 It allows users to explore service offerings, view pricing plans, review previous work, and contact the team for website development services.
 
 The application is deployed using the same DevOps infrastructure and deployment strategy implemented in the **PetCart Store project**.
 
-This project demonstrates enterprise-level DevOps practices including:
+This project demonstrates :
 
 - Jenkins CI/CD automation
 - Infrastructure provisioning using Terraform
@@ -64,4 +64,5 @@ A serverless Kubernetes deployment where:
 The deployment architecture, CI/CD pipeline, Terraform infrastructure setup, Kubernetes manifests, and automation workflows used in **WebLanceHub** are the same as those implemented in the **PetCart Store project**.
 
 For a complete and detailed understanding of the deployment architecture and implementation, please refer to the **PetCart Store project documentation**.
+
 
